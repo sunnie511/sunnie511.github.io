@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+dist/
+minPath/
+distHtml/
+distJsp/
+minPath/
+npm-debug.log
+yarn-error.log
+info.md
+
+# Editor directories and files
+.idea
+.dist
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
