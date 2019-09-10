@@ -28,16 +28,15 @@
               });
           }
           render() {
-                return (<div onClick = {
-                        () => this.clicked()
-                    }>点我 { this.state.count }次 </div>
-                );
+              return e(<div onClick = {
+                      () => this.clicked()
+                  }>点我 { this.state.count }次 </div>
+              );
           }
         }
 
-
         const domContainer = document.querySelector('#like_button_container');
-        ReactDOM.render(e(ClickMe), domContainer);
-  </script>
+        ReactDOM.render(ClickMe, domContainer);
+    </script>
 </body>
 </html>
