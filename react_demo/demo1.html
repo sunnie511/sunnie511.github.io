@@ -9,34 +9,35 @@
 </head>
 
 <body>
+    <div>123</div>
     <div id="like_button_container"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <!-- 加载我们的 React 组件。-->
-    <script type="text/babel" src="like_button.js"></script>
+    <!-- <script type="text/babel" src="like_button.js"></script> -->
     <script>
-        // class ClickMe extends React.Component {
-        //       constructor(props) {
-        //       super(props);
-        //       this.state = { count: 0 };
-        //   }
-        //   clicked() {
-        //       this.setState({
-        //           count: this.state.count + 1
-        //       });
-        //   }
-        //   render() {
-        //         return (<div onClick = {
-        //                 () => this.clicked()
-        //             }>点我 { this.state.count }次 </div>
-        //         );
-        //   }
-        // }
+        class ClickMe extends React.Component {
+              constructor(props) {
+              super(props);
+              this.state = { count: 0 };
+          }
+          clicked() {
+              this.setState({
+                  count: this.state.count + 1
+              });
+          }
+          render() {
+                return (<div onClick = {
+                        () => this.clicked()
+                    }>点我 { this.state.count }次 </div>
+                );
+          }
+        }
 
 
-        // const domContainer = document.querySelector('#like_button_container');
-        // ReactDOM.render(e(ClickMe), domContainer);
+        const domContainer = document.querySelector('#like_button_container');
+        ReactDOM.render(e(ClickMe), domContainer);
   </script>
 </body>
 
