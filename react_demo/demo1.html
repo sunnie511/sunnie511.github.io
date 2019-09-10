@@ -17,6 +17,7 @@
     <!-- 加载我们的 React 组件。-->
     <!-- <script type="text/babel" src="like_button.js"></script> -->
     <script type="text/babel">
+        const e = React.createElement;
         class ClickMe extends React.Component {
               constructor(props) {
               super(props);
@@ -28,7 +29,7 @@
               });
           }
           render() {
-              return e(<div onClick = {
+              return (<div onClick = {
                       () => this.clicked()
                   }>点我 { this.state.count }次 </div>
               );
@@ -36,7 +37,7 @@
         }
 
         const domContainer = document.querySelector('#like_button_container');
-        ReactDOM.render(ClickMe, domContainer);
+        ReactDOM.render(e(ClickMe), domContainer);
     </script>
 </body>
 </html>
