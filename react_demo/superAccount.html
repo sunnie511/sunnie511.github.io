@@ -15,29 +15,56 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <!-- 加载我们的 React 组件。-->
-    <!-- <script type="text/babel" src="like_button.js"></script> -->
     <script type="text/babel">
         const e = React.createElement;
-        class ClickMe extends React.Component {
-              constructor(props) {
-              super(props);
-              this.state = { count: 0 };
+        class Reservation extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              isGoing: true,
+              numberOfGuests: 2
+            };
+
+            this.handleInputChange = this.handleInputChange.bind(this);
           }
-          clicked() {
-              this.setState({
-                  count: this.state.count + 1
-              });
+
+          handleInputChange(event) {
+            const target = event.target;
+            const value = target.type === 'checkbox' ? target.checked : target.value;
+            const name = target.name;
+
+            this.setState({
+              [name]: value
+            });
           }
+
           render() {
-              return (<div onClick = {
-                      () => this.clicked()
-                  }>点我 { this.state.count }次 </div>
-              );
+            return (
+              <form>
+                <label>
+                  参与:
+                  <input
+                    name="isGoing"
+                    type="checkbox"
+                    checked={this.state.isGoing}
+                    onChange={this.handleInputChange} />
+                </label>
+                <br />
+                <label>
+                  来宾人数:
+                  <input
+                    name="numberOfGuests"
+                    type="number"
+                    value={this.state.numberOfGuests}
+                    onChange={this.handleInputChange} />
+                </label>
+              </form>
+            );
           }
         }
 
         const domContainer = document.querySelector('#like_button_container');
-        ReactDOM.render(e(ClickMe), domContainer);
+        ReactDOM.render(e(Reservation), domContainer);
     </script>
 </body>
 </html>
