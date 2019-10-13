@@ -9,26 +9,65 @@
 </head>
 
 <body>
-    <div>12389999</div>
     <div id="like_button_container"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      .form-box {
+        margin: 240px auto;
+        color:#666;
+        width: 300px;
+      }
+      
+      input {
+        width: 300px;
+        height: 30px;
+        outline: none;
+        padding: 0  5px;
+        margin:8px 0 20px 0;
+      }
+      button {
+        width: 314px;
+        height: 38px;
+        outline: none;
+        background: #f6a300;
+        outline: none;
+        border: 0;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      
+    </style>
     <!-- 加载我们的 React 组件。-->
     <script type="text/babel">
         const e = React.createElement;
         class superAccount extends React.Component {
-          constructor(){
+          constructor() {
             super();
+            this.state = {
+              myAccount: '',
+              linkedAccount: ''
+            }
+          }
+          changeMyAcc() {
+
+          }
+          changeRelAcc() {
+
+          }
+          linkAccount() {
+            
           }
           render() {
-            return (<form>
-                <label>我的账号<input type="text" name="" placeholder="请输入我的账号" /></label>
-                <label>选择关联账号<input type="text" name="" placeholder="请输入关联账号" /></label>
-                <button>关联账号</button>
-              </form>
+            return (<div className="form-box"><form>
+                <label>我的账号</label><div><input className="myAccount" type="text" value={this.state.myAccount}  name="" onChange={this.changeMyAcc} placeholder="请输入我的账号" /></div>
+                <label>选择关联账号</label><div><input className="relateAccount" type="text" value={this.state.linkedAccount} name="" onChange={this.changeRelAcc} placeholder="请输入关联账号" /></div>
+                <button onClick={this.linkAccount}>关联账号</button>
+              </form></div>
             )
-            
           }
         }
         
